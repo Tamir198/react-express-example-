@@ -1,17 +1,23 @@
-
 const SomeComponent = () => {
 
-  const getData = async  () => {
+  const getData = (method) => {
     fetch("/", {
-      method: "GET",
-      mode: 'no-cors'
-      //TODO print the response message
-    }).then(response => response.json()).then(data => console.log(data));
+      method: method,
+      //TODO check why 
+    }).then(response => response.text()).then(data => console.log(data));
   }
 
-  return <button onClick={getData}>I am buttom from another file</button>
+  return [
+    //todo check why on get request html page is sent back to me
+    <button onClick={() => getData("GET")}>Press me to send GET request (go and check the console)</button>,
+    <br></br>,
+    <button onClick={() => getData("POST")}>Press me to send POST request (go and check the console)</button>,
+    <br></br>,
+    <button onClick={() => getData("PUT")}>Press me to send PUT request (go and check the console)</button>,
+    <br></br>,
+    <button onClick={() => getData("DELETE")}>Press me to send DELETE request (go and check the console)</button>
+  ]
+
 }
-
-
 
 export default SomeComponent;
