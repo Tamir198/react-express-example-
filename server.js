@@ -2,19 +2,19 @@ var express = require('express');
 var app = express();
 
 
-app.get('/', function (req, res) {
+app.get('/data', function (req, res) {
    res.send('Hey, I am get response');
 })
 
-app.post('/', function (req, res) {
+app.post('/data', function (req, res) {
   res.send('Hey, I am post response');
 })
 
-app.put('/', function (req, res) {
+app.put('/data', function (req, res) {
   res.send('Hey, I am put response');
 })
 
-app.delete('/', function (req, res) {
+app.delete('/data', function (req, res) {
   res.send('Hey, I am delete response');
 })
 

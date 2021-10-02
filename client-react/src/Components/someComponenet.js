@@ -1,7 +1,7 @@
 const SomeComponent = () => {
 
   const getData = (method) => {
-    fetch("/", {
+    fetch("/data", {
       method: method,
       //TODO check why 
     }).then(response => response.text()).then(data => console.log(data));
